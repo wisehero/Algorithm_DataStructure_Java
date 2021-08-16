@@ -14,6 +14,7 @@ public class Factorial {
         }
     }
 
+    // 반복문으로 팩토리얼 만들기
     static int factorialV2(int n) {
         int fact = 1;
 
