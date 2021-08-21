@@ -58,4 +58,22 @@ public class IntQueue {
             front = 0;
         return x;
     }
+
+    // 큐에서 데이터를 피크
+    // 큐에 프론트 인덱스를 반환
+    public int peek() throws EmptyIntQueueException {
+        if (num <= 0)
+            throw new EmptyIntQueueException();
+        return que[front];
+    }
+
+    // 큐에서 x를 검색하여 인덱스를 반환, 찾지 못하면 -1
+    public int indexOf(int x) {
+        for (int i = 0; i < num; i++) {
+            int idx = (i + front) % max;
+            if (que[idx] == x)
+                return idx;
+        }
+        return -1;
+    }
 }
