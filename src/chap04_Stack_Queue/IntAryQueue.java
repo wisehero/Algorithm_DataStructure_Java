@@ -4,7 +4,6 @@ public class IntAryQueue {
 
     public class EmptyIntAryQueueException extends RuntimeException {
         public EmptyIntAryQueueException() {
-
         }
     }
 
@@ -38,9 +37,12 @@ public class IntAryQueue {
     public int deQueue() throws EmptyIntAryQueueException {
         if (num <= 0)
             throw new EmptyIntAryQueueException();
-        int x = que[0];
+        int x = que[0]; // 첫 번째껄 빼냄
+
+        // 한칸 씩 앞으로
         for (int i = 0; i < num - 1; i++)
             que[i] = que[i + 1];
+        // 데이터 개수를 하나 줄임
         num--;
         return x;
     }
