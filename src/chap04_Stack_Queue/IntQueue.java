@@ -42,4 +42,20 @@ public class IntQueue {
             rear = 0;
         return x;
     }
+
+    // 디큐 메서드
+    // 프론트를 하나 증가시키고
+    // num은 하나 감소
+    // rear는 변화 없음
+    public int deque() throws EmptyIntQueueException {
+        if (num <= 0)
+            throw new EmptyIntQueueException();
+        int x = que[front++];
+        num--;
+        // 프론트가 max를 넘어서면 안되므로
+        // 프론트가 max와 같아지면 0으로 돌려아한다.
+        if (front == max)
+            front = 0;
+        return x;
+    }
 }
