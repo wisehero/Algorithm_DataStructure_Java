@@ -6,7 +6,7 @@ public class Hanoi {
     //no개의 원반을 x번 기둥에서 y번 기둥으로 옮김
 
     static void move(int no, int x, int y) {
-        // 원반은 2개 이상일 때만 의미가 있으므로
+        // 원반은 2개 이상일 때만 의미가 있음
         if (no > 1) {
             move(no - 1, x, 6 - x - y);
         }
